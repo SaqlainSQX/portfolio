@@ -1,63 +1,113 @@
-import Image from "next/image";
+import Sidebar from "./components/Sidebar";
+import ExperienceItem from "./components/ExperienceItem";
+import ProjectCard from "./components/ProjectCard";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+    /* The outer container uses 'flex' to put Sidebar and Main side-by-side */
+    <div className="flex min-h-screen bg-white font-sans text-zinc-900 selection:bg-zinc-100">
+      
+      {/* 1. Sidebar Component */}
+      <Sidebar />
+      
+      {/* 2. Main Content Area */}
+      {/* 'ml-64' is the secret—it matches the sidebar width so they don't overlap */}
+      <main className="flex-1 ml-64 min-h-screen">
+        <div className="max-w-4xl mx-auto p-12 md:p-20">
+          
+          {/* About Section */}
+          <section id="about" className="mb-24 pt-10">
+            <h2 className="text-sm font-bold text-zinc-400 uppercase tracking-[0.3em] mb-8">01 / About</h2>
+            <div className="max-w-2xl">
+              <p className="text-lg text-zinc-700 leading-relaxed mb-6 font-serif">
+                I am a second-year B.Tech IT student at the <span className="text-zinc-900 font-semibold">Indian Institute of Information Technology, Allahabad</span>.
+              </p>
+              <p className="text-base text-zinc-600 leading-relaxed mb-8">
+                My core technical interests are in <span className="font-semibold text-zinc-900">Machine Learning</span>, <span className="font-semibold text-zinc-900">Computer Vision</span>, and <span className="font-semibold text-zinc-900">NLP</span>. I am pursuing a career in ML/Data Science, focused on building efficient infrastructure and agentic systems.
+              </p>
+              <p className="text-xs text-zinc-400 mb-6 italic">Open to research roles at labs and applied ML positions at companies.</p>
+              <div className="flex flex-wrap gap-2 text-[11px] font-semibold">
+                {["Data Science", "Computer Vision", "NLP", "Agentic Systems"].map(tag => (
+                  <span key={tag} className="px-3 py-1 bg-zinc-50 text-zinc-600 rounded-md border border-zinc-100 uppercase tracking-wider">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Experience Section */}
+          <section id="experience" className="mb-24">
+            <h2 className="text-sm font-bold text-zinc-400 uppercase tracking-[0.3em] mb-12">02 / Experience</h2>
+            <div className="space-y-2">
+              <ExperienceItem 
+                title="Research Intern"
+                company="Centre for Intelligent Robotics (CIR), IIIT Allahabad"
+                date="Nov 2025 – Present"
+                description="Leading research on query-conditioned Spatio-Temporal Transformers and Active Inference for world-model consistency."
+              />
+              <ExperienceItem 
+                title="Member"
+                company="Geekhaven AI/ML Wing, IIIT Allahabad"
+                date="Sep 2025 – Present"
+                description="Collaborating on department-wide AI/ML workshops and open-source mentoring."
+              />
+            </div>
+          </section>
+
+          {/* Papers Section */}
+          <section id="papers" className="mb-24">
+            <h2 className="text-sm font-bold text-zinc-400 uppercase tracking-[0.3em] mb-12">03 / Papers</h2>
+            <div className="p-8 rounded-xl border border-zinc-100 bg-zinc-50/30">
+              <h3 className="font-serif text-xl text-zinc-900 mb-2 italic">QueST: Query-conditioned Spatio-Temporal Transformers for Long-Horizon Tracking</h3>
+              <p className="text-xs text-zinc-500 mb-4 font-mono tracking-widest uppercase font-bold">Submitted to ICML 2026 (First Author)</p>
+              <p className="text-sm text-zinc-600 leading-relaxed">
+                Submitted as first author. Architected a novel transformer model to maintain tracking consistency in high-occlusion articulated motion scenarios.
+              </p>
+            </div>
+          </section>
+
+          {/* Projects Section */}
+          <section id="projects" className="mb-24">
+            <h2 className="text-sm font-bold text-zinc-400 uppercase tracking-[0.3em] mb-12">04 / Projects</h2>
+            <div className="flex flex-col gap-4">
+              <ProjectCard 
+                title="Narrative Consistency Engine" 
+                tags={["Qwen 2.5", "Pathway (BDH)", "XGBoost", "Deep Learning", "Python"]} 
+                description="Engineered a sophisticated local inference pipeline leveraging Qwen 2.5 7B with custom-trained Baby Dragon Hatchling (BDH) embeddings for semantic coherence analysis. Integrated deep learning architectures with XGBoost ensemble classifiers to detect cross-temporal narrative inconsistencies across parallel story arcs with high precision."
+                comingSoon={true}
+              />
+              <ProjectCard 
+                title="Eudexa: All-in-One Law Firm Companion" 
+                tags={["RAG", "LangChain", "Pinecone", "Automation", "Python"]} 
+                description="Architected a comprehensive legal AI platform featuring Retrieval-Augmented Generation across 1,000+ unstructured documents with sub-500ms latency. Integrated intelligent meeting scheduling, automated risk-assessment calls to clients, and proactive case monitoring—transforming traditional law firm operations into a unified AI-driven workflow."
+                link="https://github.com/ArjunDeshwal/eudia"
+              />
+              <ProjectCard 
+                title="SmartKisaan: AI-Powered Agricultural Intelligence System" 
+                tags={["FastAPI", "TensorFlow", "Jetpack Compose", "Gemini API", "PostgreSQL"]} 
+                description="Developed a full-stack mobile platform combining a custom-trained deep learning model for real-time crop disease detection with Google Gemini-enhanced remediation insights. Features include JWT-secured authentication, real-time weather integration via OpenWeatherMap, an agricultural marketplace, community forum, and an AI-powered farming assistant chatbot—all orchestrated through a scalable FastAPI backend with PostgreSQL."
+                link="https://github.com/SaqlainSQX/SmartKisan_Project"
+              />
+            </div>
+            <p className="text-sm text-zinc-400 italic mt-6 text-center">More projects will be added soon</p>
+          </section>
+
+          {/* Blogs Section */}
+          <section id="blogs" className="pb-24">
+            <h2 className="text-sm font-bold text-zinc-400 uppercase tracking-[0.3em] mb-12">05 / Blogs</h2>
+            <div className="flex flex-col gap-4">
+              <div className="p-8 rounded-xl border border-dashed border-zinc-200 bg-white">
+                <h3 className="font-serif text-lg text-zinc-800 mb-1">BIOMASS prediction from Image</h3>
+                <p className="text-sm text-zinc-400 italic font-medium">Coming soon</p>
+              </div>
+              <div className="p-8 rounded-xl border border-dashed border-zinc-200 bg-white">
+                <h3 className="font-serif text-lg text-zinc-800 mb-1">How to start with ML as a fresher</h3>
+                <p className="text-sm text-zinc-400 italic font-medium">Coming soon</p>
+              </div>
+            </div>
+          </section>
+
         </div>
       </main>
     </div>
