@@ -79,6 +79,12 @@ export default function Home() {
             <h2 className="text-sm font-bold text-zinc-400 uppercase tracking-[0.3em] mb-12">04 / Projects</h2>
             <div className="flex flex-col gap-4">
               <ProjectCard 
+                title="Matsya AI: Intelligent Catch Analysis" 
+                tags={["YOLO", "ResNet", "Agentic AI", "Computer Vision", "Python"]} 
+                description="Engineered a Perception-to-Action pipeline using YOLO (detection) and ResNet (classification) to extract biological insights from fish imagery. Implemented a three-path weight estimation pipeline combining regression models, biological formulas, and contextual reasoning. Built an Agentic AI 'Brain' that analyzes catch history, weather, and market prices to recommend optimal selling strategies."
+                link="https://github.com/sahsudhanshu/ai-for-bharat"
+              />
+              <ProjectCard 
                 title="Narrative Consistency Engine" 
                 tags={["Qwen 2.5", "Pathway (BDH)", "XGBoost", "Deep Learning", "Python"]} 
                 description="Engineered a sophisticated local inference pipeline leveraging Qwen 2.5 7B with custom-trained Baby Dragon Hatchling (BDH) embeddings for semantic coherence analysis. Integrated deep learning architectures with XGBoost ensemble classifiers to detect cross-temporal narrative inconsistencies across parallel story arcs with high precision."
