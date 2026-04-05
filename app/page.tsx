@@ -43,7 +43,7 @@ export default function Home() {
               <ExperienceItem 
                 title="Research Intern"
                 company="Centre for Intelligent Robotics (CIR), IIIT Allahabad"
-                date="Nov 2025 – Present"
+                date="Nov 2025 – Mar 2026"
                 description="Leading research on query-conditioned Spatio-Temporal Transformers and Active Inference for world-model consistency."
               />
               <ExperienceItem 
@@ -58,11 +58,18 @@ export default function Home() {
           {/* Papers Section */}
           <section id="papers" className="mb-24">
             <h2 className="text-sm font-bold text-zinc-400 uppercase tracking-[0.3em] mb-12">03 / Papers</h2>
-            <div className="p-8 rounded-xl border border-zinc-100 bg-zinc-50/30">
-              <h3 className="font-serif text-xl text-zinc-900 mb-2 italic">QueST: Query-conditioned Spatio-Temporal Transformers for Long-Horizon Tracking</h3>
-              <p className="text-xs text-zinc-500 mb-4 font-mono tracking-widest uppercase font-bold">Submitted to ICML 2026 (First Author)</p>
+            <a href="https://openreview.net/forum?id=GDVJCGDgN1#discussion" target="_blank" rel="noopener noreferrer" className="block p-8 rounded-xl border border-zinc-100 bg-zinc-50/30 hover:border-zinc-300 transition-colors">
+              <h3 className="font-serif text-xl text-zinc-900 mb-2 italic">QueST: Persistent Queries as Semantic Monitors for Drift Suppression in Long-Horizon Tracking</h3>
+              <p className="text-xs text-zinc-500 mb-4 font-mono tracking-widest uppercase font-bold">Accepted at ICLR Workshop</p>
               <p className="text-sm text-zinc-600 leading-relaxed">
-                Submitted as first author. Architected a novel transformer model to maintain tracking consistency in high-occlusion articulated motion scenarios.
+                Architected a novel transformer model to maintain tracking consistency in high-occlusion articulated motion scenarios.
+              </p>
+            </a>
+            <div className="p-8 rounded-xl border border-zinc-100 bg-zinc-50/30 mt-4">
+              <h3 className="font-serif text-xl text-zinc-900 mb-2 italic">DRAGON: Dual Recurrent Attention Gated Optimization Network for Neuro-Symbolic Fact Verification</h3>
+              <p className="text-xs text-zinc-500 mb-4 font-mono tracking-widest uppercase font-bold">Under Review at NeSy</p>
+              <p className="text-sm text-zinc-600 leading-relaxed">
+                Proposed a lightweight neuro-symbolic framework (~110M parameters) with dual neural pathways for automated fact verification, addressing limitations of RAG pipelines through active multi-hop reasoning over distributed evidence.
               </p>
             </div>
           </section>
