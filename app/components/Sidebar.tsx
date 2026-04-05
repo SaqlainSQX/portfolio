@@ -2,8 +2,8 @@ export default function Sidebar() {
   const navItems = [
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
     { name: "Papers", href: "#papers" },
+    { name: "Projects", href: "#projects" },
     { name: "Blogs", href: "#blogs" },
   ];
   
