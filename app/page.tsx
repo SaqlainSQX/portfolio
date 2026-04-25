@@ -65,19 +65,18 @@ export default function Home() {
                 Architected a novel transformer model to maintain tracking consistency in high-occlusion articulated motion scenarios.
               </p>
             </a>
-            <div className="p-8 rounded-xl border border-zinc-100 bg-zinc-50/30 mt-4">
-              <h3 className="font-serif text-xl text-zinc-900 mb-2 italic">DRAGON: Dual Recurrent Attention Gated Optimization Network for Neuro-Symbolic Fact Verification</h3>
-              <p className="text-xs text-zinc-500 mb-4 font-mono tracking-widest uppercase font-bold">Under Review at NeSy</p>
-              <p className="text-sm text-zinc-600 leading-relaxed">
-                Proposed a lightweight neuro-symbolic framework (~110M parameters) with dual neural pathways for automated fact verification, addressing limitations of RAG pipelines through active multi-hop reasoning over distributed evidence.
-              </p>
-            </div>
           </section>
 
           {/* Projects Section */}
           <section id="projects" className="mb-24">
             <h2 className="text-sm font-bold text-zinc-400 uppercase tracking-[0.3em] mb-12">04 / Projects</h2>
             <div className="flex flex-col gap-4">
+              <ProjectCard
+                title="FinGraph: Multi-Agent Financial Intelligence System (March 2026)"
+                tags={["LangGraph", "Llama 3.1 70B", "Tavily API", "yfinance", "NetworkX", "Streamlit"]}
+                description="Developed a multi-agent orchestration pipeline for investment analysis and risk assessment (Top 10 at III 5.0 Hackathon). Engineered a 4-node acyclic graph (Market Data Fetcher → Technical Analyst → Sentiment Miner → Risk Auditor) powered by Tavily API and yfinance. Built a Stock Network Analyzer with NetworkX and Streamlit to visualize Pearson and lagged correlations."
+                link="https://github.com/SaqlainSQX/III5.0"
+              />
               <ProjectCard 
                 title="Matsya AI: Intelligent Catch Analysis" 
                 tags={["YOLO", "ResNet", "Agentic AI", "Computer Vision", "Python"]} 
