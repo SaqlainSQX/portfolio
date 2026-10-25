@@ -6,8 +6,6 @@ export const links = {
   openreview: 'https://openreview.net/profile?id=%7EMohammad_Saqlain1',
   memopopsBlog: 'https://medium.com/@mohammadsaqlain1626/memopops-remembering-why-an-ai-agent-believes-something-bf51ae7323cb',
   blog: 'https://medium.com/@mohammadsaqlain1626/spiral-fovea-looking-at-images-where-the-detail-matters-9616fbf5df81',
-  leetcode: 'https://leetcode.com/u/spen_sa/',
-  codechef: 'https://www.codechef.com/users/spen_sa/',
 };
 export const projectLinks: Record<string, {source?: string; demo?: string; paper?: string}> = {
   distristore: {source: 'https://github.com/CN-2026-IIITA/Distri_Store'},
