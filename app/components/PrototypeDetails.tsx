@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import {useEffect,useRef,useState} from "react";
 export default function PrototypeDetails({mode}:{mode:"avatar"|"clock"|"theme"|"particles"}){
  const [clock,setClock]=useState("");const [light,setLight]=useState(false);const canvas=useRef<HTMLCanvasElement>(null);
@@ -8,5 +9,5 @@ export default function PrototypeDetails({mode}:{mode:"avatar"|"clock"|"theme"|"
  if(mode==="clock")return <span className="local-time"><i aria-hidden="true"/>{clock?`${clock} IST`:"India · IST"}</span>;
  if(mode==="theme")return <button className="theme-toggle" aria-label="Toggle light or dark theme" onClick={()=>{const next=document.documentElement.dataset.theme!=="light";setLight(next);document.documentElement.dataset.theme=next?"light":"dark";try{localStorage.setItem("saqlain-theme",next?"light":"dark")}catch{}}}>{light?"☀":"☾"}</button>;
  if(mode==="particles")return <canvas ref={canvas} className="particle-canvas" aria-hidden="true"/>;
- return <div className="avatar-art" aria-label="Abstract three-dimensional geometric monogram" role="img"><div className="avatar-grain"/><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="avatar-letter">s<span>.</span></div><span className="avatar-caption">BUILD / LEARN / REPEAT</span></div>;
+ return <div className="profile-picture"><Image src="/images/saqlain-profile.png" alt="Black-and-white illustration of a seated traveler overlooking a landscape" width={388} height={516} priority sizes="(max-width: 600px) 118px, 142px" /></div>;
 }

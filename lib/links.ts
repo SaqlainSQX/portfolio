@@ -15,5 +15,4 @@ export const projectLinks: Record<string, {source?: string; demo?: string; paper
   memopops: {source: 'https://github.com/SaqlainSQX/memopops'},
   dragon: {paper: 'https://drive.google.com/file/d/1_jWcb691Y_WYZFWqP3vTuVKc4bZwmAkX/view?usp=sharing'},
   smartkisaan: {source: 'https://github.com/SaqlainSQX/SmartKisan_Project'},
-  fingraph: {source: 'https://github.com/SaqlainSQX/III5.0'},
 };
